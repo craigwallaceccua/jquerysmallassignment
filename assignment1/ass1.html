@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 1</title>
+</head>
+
+<body>
+
+    <div id="list-container">
+        <ul id="list">
+        </ul>
+    </div>
+
+    <div id="controls">
+        <button id="delete">Delete</button>
+    </div>
+
+
+<style>
+
+#list-container {
+    border: 1px solid black;
+}
+
+#list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.list-item {
+    border: 1px solid grey;
+}
+
+.list-item > label {
+    padding: 10px;
+    display: block;
+}
+
+.list-checkbox {
+    margin-right: 20px;
+}
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+
+jQuery(document).ready(function() {
+
+var data = {
+
+    listData: [
+        {id: 1, name: "The first thing"},
+        {id: 2, name: "The second thing"},
+        {id: 3, name: "The third thing"},
+        {id: 4, name: "The fourth thing"},
+        {id: 5, name: "The fifth thing"},
+        {id: 6, name: "The sixth thing"},
+        {id: 7, name: "The seventh thing"},
+    ],
+
+};
+
+
+function loadListData(listData) {
+    var listContainer = $('#list');
+
+    for (var i = 0; i < listData.length; i++) {
+        var dataPoint = listData[i];
+        var elHtml = '<li class="list-item" id="list-'+ dataPoint.id + '">' +
+            '<label for="list-checkbox-' + dataPoint.id + '">' +
+            '<input id="list-checkbox-' + dataPoint.id + '" class="list-checkbox" type="checkbox">' +
+            dataPoint.name +
+            '</label>' +
+            '</li>';
+        $('#list').append(elHtml);
+    }
+}
+
+function deleteAction(arg1) {
+    console.log(arg1);
+}
+
+loadListData(data.listData);
+
+$('#delete').click(deleteAction);
+
+});
+</script>
+
+</body>
+
+</html>
