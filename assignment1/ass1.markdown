@@ -25,4 +25,4 @@ Style the list
 
 ## Part 4
 
-Implement `deleteAction(`. Delete any selected elements with a fading effect. If no elements are selected, berate the user for being stupid.
+Implement `deleteAction(`. *After asking for confirmation from the user*, delete any selected elements with a fading effect. If no elements are selected, berate the user for being stupid.
