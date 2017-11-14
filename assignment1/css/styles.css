@@ -1,0 +1,40 @@
+#list-container {
+    border: 1px solid black;
+}
+#list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.list-item {
+    border: 1px solid grey;
+}
+.list-item > label {
+    padding: 10px;
+    display: block;
+}
+.list-checkbox {
+    margin-right: 20px;
+}
+
+ul#list>li:nth-child(odd){
+    background-color: #bebebe;
+}
+
+input:checked::parent {
+    border-color: red;
+}
+.unselected {
+    border: 1px solid #00FF00;
+}
+
+.selected {
+    border: 1px solid red;
+    font-weight: bold;
+
+}
+
+
+
+.default {
+    border: 1px solid grey;
+}
